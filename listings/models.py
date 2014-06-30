@@ -19,7 +19,8 @@ class AptListing(models.Model):
     price = models.OneToOneField('Price')
     
 class Features(models.Model):
-    furniture = models.TextField()
+    furnished = models.BooleanField(default=False)
+    furniture = models.TextField(blank=True)
 
 class Price(models.Model):
     monthly_rent = models.IntegerField()
@@ -27,6 +28,7 @@ class Price(models.Model):
     security_deposit = models.IntegerField()
 
 class Utilities(models.Model):
+    water = models.IntegerField(default=0)
     electricity = models.IntegerField(default=0)
     air_cond = models.IntegerField(default=0)
     heat = models.IntegerField(default=0)
