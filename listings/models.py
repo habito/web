@@ -6,7 +6,8 @@ class Apartment(models.Model):
     address = models.OneToOneField(Address)
     num_beds = models.IntegerField(max_length=1, default=1)
     num_baths = models.IntegerField(max_length=1, default=1)
-    
+    num_stories = models.IntegerField(max_length=1, default=1)
+      
 class AptListing(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField()
