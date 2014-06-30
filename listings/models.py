@@ -13,9 +13,13 @@ class AptListing(models.Model):
     apt = models.IntegerField('Apartment')
     owner = models.OneToOneField(UserProfile)
 
+    features = models.OneToOneField('Features')
     utilities = models.OneToOneField('Utilities')
     price = models.OneToOneField('Price')
     
+class Features(models.Model):
+    furniture = models.TextField()
+
 class Price(models.Model):
     monthly_rent = models.IntegerField()
     prorated = models.BooleanField(default=True)
