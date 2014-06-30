@@ -5,3 +5,4 @@ class Address(models.Model):
     city = models.TextField()
     state = models.TextField()
     zip_code = models.IntegerField()
+    neightborhood = models.CharField(max_length=50)
