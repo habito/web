@@ -2,17 +2,20 @@ from django.db import models
 from general_models.models import Address
 from user_profile.models import UserProfile
 
+class Apartment(models.Model):
+    address = models.OneToOneField(Address)
+    num_beds = models.IntegerField(max_length=1, default=1)
+    num_baths = models.IntegerField(max_length=1, default=1)
+
 class AptListing(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField()
-    num_beds = models.IntegerField(max_length=1, default=1)
-    num_baths = models.IntegerField(max_length=1, default=1)
-    address = models.OneToOneField(Address)
+    apt = models.IntegerField('Apartment')
     owner = models.OneToOneField(UserProfile)
 
     utilities = models.OneToOneField('Utilities')
     price = models.OneToOneField('Price')
-
+    
 class Price(models.Model):
     monthly_rent = models.IntegerField()
     prorated = models.BooleanField(default=True)
