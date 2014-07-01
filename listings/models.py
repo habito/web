@@ -39,6 +39,6 @@ class Utilities(models.Model):
      
 class Prohibitions(models.Model):
     can_smoke = models.BooleanField(default=False)
-    can_party = models.BooelanField(default=False)
+    can_party = models.BooleanField(default=False)
     pets_allowed = models.BooleanField(default=False)
     
