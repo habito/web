@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
-    phone_number = models.IntegerField(max_length=1, default=1)
+    phone_number = models.IntegerField()
     start_date = models.DateField(_(Date), default=datetime.date.today)    
 
     def __str__(self):
