@@ -37,3 +37,8 @@ class Utilities(models.Model):
     cable = models.IntegerField(default=0)
     insurance = models.IntegerField(default=0)
      
+class Prohibitions(models.Model):
+    can_smoke = models.BooleanField(default=False)
+    can_party = models.BooelanField(default=False)
+    pets_allowed = models.BooleanField(default=False)
+    
