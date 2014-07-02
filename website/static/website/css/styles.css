@@ -119,3 +119,34 @@ body {
 .btn-outline-inverse:hover {
 	background-color:white;
 }
+
+/** FRONT PAGE INPUT **/
+.home-search {
+    background:transparent;
+    color:white;
+    border: 1px solid white;
+}
+.home-search-div {
+    margin:0 auto;
+}
+.home-search-button:hover {
+    cursor:pointer;
+    color:black;
+    background:white;
+}
+/** Make Home Page Search Placeholder White **/
+.home-search-field::-webkit-input-placeholder {
+    color: white;
+}
+FF 4-18 
+.home-search-field:-moz-placeholder {
+    color: white;
+}
+FF 19+ 
+.home-search-field::-moz-placeholder {
+    color: white;
+}
+IE 10+ 
+.home-search-field:-ms-input-placeholder {
+    color: white;
+}
