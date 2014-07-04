@@ -4,7 +4,7 @@ import datetime
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
-   #profile_pic = models.ImageField(upload_to='profile_images', profile_images')
+    profile_pic = models.ImageField(upload_to='../media/profile_images', default='../media/profile_images/pp.png')
     phone_number = models.IntegerField()
     start_date = models.DateField()
     end_date = models.DateField()
