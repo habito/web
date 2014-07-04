@@ -4,6 +4,7 @@ import datetime
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
+   #profile_pic = models.ImageField()
     phone_number = models.IntegerField()
     start_date = models.DateField()
     end_date = models.DateField()
