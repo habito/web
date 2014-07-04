@@ -1,0 +1,85 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mauraders">
+    <meta name="description" content="Looking to find an apartment? Have a place to lease? We connect apartment owners, tenants, and subletters. Finding an apartment has never been easier.">
+    <meta name="keywords" content="apartment, apt, subletters, sublease, tenants">
+    <title>Mauraders</title>
+    {% load staticfiles %}
+    <link href="{% static 'website/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'website/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'website/css/navbar.css' %}" rel="stylesheet">
+    <link href="{% static 'website/css/browse.css' %}" rel="stylesheet">
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+    <nav class="navbar navbar-custom navbar-fixed-top top-nav-collapse" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="/">
+                    Mauraders
+                </a>
+
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <li class='active'>
+                        <a href="#">Browse</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-search" style="line-height:inherit"></i></a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#download">Log In</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#download">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <section id="listings">
+        <div class='col-xs-1'>
+        Waiting ... is torture.
+
+A quiet, insidious torture.
+
+A creeping, queazy feeling that your life is slowly, slowly slipping away.
+
+The only thing worse than waiting is waiting under uncertainty.
+
+Every day, millions of transit users experience this feeling as they wait for their buses to arrive. All too often, this indignity is punctuated by the sight of multiple buses arriving together.
+
+Bus bunching is not the fault of drivers or transit agencies. Keeping buses running on time is inherently difficult. If a bus falls behind schedule, it has to collect more passengers, which slows boarding, causing the bus to fall even further behind. This vicious cycle results in bunching. Bus bunching increases passenger wait times, slows buses, and reduces reliability. It hurts passengers and agencies alike.
+
+The first step is admitting that your transit agency has a problem.
+
+The second step is accepting that it's not your fault.
+
+The third step is Tempo, an automated transit synchronization system from VIA Analytics.
+        </div>
+        <div class='col-xs-9'>
+
+        </div>
+    </section>
+
+</body>
+<script src="{% static 'website/js/jquery-1.11.1.min.js' %}"></script>
+<script src="{% static 'website/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'website/js/browse.js' %}"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+</html>
