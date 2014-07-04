@@ -5,7 +5,7 @@ import datetime
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
     phone_number = models.IntegerField()
-    start_date = models.DateField(default=datetime.date.today)    
+    start_date = models.DateField()
     end_date = models.DateField()
     annual_pay = models.IntegerField()
     
