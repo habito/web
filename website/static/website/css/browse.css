@@ -1,3 +1,31 @@
-#listings {
-	margin-top: 50px;
+body {
+	padding-top:50px;
+}
+
+#map-div {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+#left-bar {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+#refine-search {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align:center;
+	color:white;
+	background-color:#5cb85c;
+}
+
+.list-group-item:first-child {
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
+}
+
+.list-group-item:last-child {
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
 }

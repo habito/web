@@ -89,7 +89,7 @@ body {
     }
 
     .navbar-custom.top-nav-collapse {
-        border-bottom: 1px solid gray;
+        border-bottom: 1px solid #eee;
         /*border-bottom: 1px solid rgba(255,255,255,.3);*/
     }
 }
@@ -127,6 +127,15 @@ body {
 /* ABOUT */
 #about {
 	padding: 50px;
+}
+
+/** FOOTER */
+#footer {
+    color:white;
+    padding-top:50px;
+    padding-bottom:50px;
+    background-color:#428bca;
+    width:100%;
 }
 
 /* BUTTONS */
