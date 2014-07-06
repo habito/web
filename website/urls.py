@@ -6,4 +6,5 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^$', 'website.views.index', name='index'),
     url(r'^browse/$', 'website.views.browse', name='browse'),
+    url(r'^register/$', 'website.views.register', name='register'),
 )
