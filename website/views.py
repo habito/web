@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.contrib.auth import authenticate, login
 from user_profile.forms import *
+
 
 def index(request):
     return render(request, 'website/index.html', {})
@@ -37,6 +38,5 @@ def sign_up(request):
 	
 	return render_to_response(
             'website/sign_up.html',
-            {'user_form': user_form, 'profile_form': profile_form, 'registered': registered},
-            context)
+            {'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
 
