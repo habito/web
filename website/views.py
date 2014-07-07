@@ -1,5 +1,6 @@
 from django.shortcuts import render, render_to_response
 from django.contrib.auth import authenticate, login
+from django.template import RequestContext, loader
 from user_profile.forms import *
 
 
@@ -9,8 +10,8 @@ def index(request):
 def browse(request):
     return render(request, 'website/browse.html', {})
 
-def sign_up(request):
-	#context = RequestContext(request)
+def register(request):
+	context = RequestContext(request)
 	registered = False
 	
 	if request.method == 'POST':
@@ -38,11 +39,10 @@ def sign_up(request):
 	
 	return render_to_response(
             'website/sign_up.html',
-            {'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
+            {'user_form': user_form, 'profile_form': profile_form, 'registered': registered}, context)
 
 def login_user(request):
-	state = "Please Log in below"
-	username = password = ''
+	context = RequestContext(request)
 	
 	if request.POST:
 		username = request.POST.get('username')
@@ -59,6 +59,6 @@ def login_user(request):
 			state = "Your username and/or password were incorrect, please try again."
 	return render_to_response(
 			'website/login.html', 
-			{'state': state, 'username': username})
+			{}, context)
 	
 				
