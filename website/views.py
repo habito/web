@@ -40,3 +40,25 @@ def sign_up(request):
             'website/sign_up.html',
             {'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
 
+def login_user(request):
+	state = "Please Log in below"
+	username = password = ''
+	
+	if request.POST:
+		username = request.POST.get('username')
+		password = request.POST.get('password')
+		
+		user = authenticate(user=user, password=password)
+		if user is not None:
+			if user.is_active:
+				login(request,user)
+				state = "You're logged in to Mauraders!"
+			else:
+				state = "Your account is not active, please contact us."
+		else:
+			state = "Your username and/or password were incorrect, please try again."
+	return render_to_response(
+			'website/login.html', 
+			{'state': state, 'username': username})
+	
+				
