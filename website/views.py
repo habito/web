@@ -48,13 +48,9 @@ def login_user(request):
 		username = request.POST.get('username')
 		password = request.POST.get('password')
 		
-		user = authenticate(user=user, password=password)
+		user = authenticate(user=username, password=password)
 		if user is not None:
-			if user.is_active:
-				login(request,user)
-				state = "You're logged in to Mauraders!"
-			else:
-				state = "Your account is not active, please contact us."
+			login(request,user)
 		else:
 			state = "Your username and/or password were incorrect, please try again."
 	return render_to_response(
