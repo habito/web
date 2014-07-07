@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mauraders">
+    <meta name="description" content="Looking to find an apartment? Have a place to lease? We connect apartment owners, tenants, and subletters. Finding an apartment has never been easier.">
+    <meta name="keywords" content="apartment, apt, subletters, sublease, tenants">
+    <title>Mauraders</title>
+    {% load staticfiles %}
+    <link href="{% static 'website/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'website/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'website/css/navbar.css' %}" rel="stylesheet">
+    <link href="{% static 'website/css/browse.css' %}" rel="stylesheet">
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+    <nav class="navbar navbar-custom navbar-fixed-top top-nav-collapse" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="/">
+                    Mauraders
+                </a>
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <li class='active'>
+                        <a href="#">Browse</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-search" style="line-height:inherit"></i></a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#download">Log In</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#download">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+        <h1 style="text-align:center">Sign up to Mauraders</h1>
+
+        {% if registered %}
+        Mauraders says: <strong>thank you for signing up!</strong>
+        <a href="/website/">Return to the homepage.</a><br />
+        {% else %}
+        Mauraders says: <strong>Sign up here!</strong><br />
+
+        <form id="user_form" method="post" action="/sign_up/"
+                enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            <!-- Display each form. The as_p method wraps each element in a paragraph
+                 (<p>) element. This ensures each element appears on a new line,
+                 making everything look neater. -->
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+
+            <!-- Provide a button to click to submit the form. -->
+            <input type="submit" name="submit" value="Sign Up" />
+        </form>
+        {% endif %}
+        <div id='map-div' class='col-xs-9'>
+            <div id="map-canvas" style="width:100%; height:100%"></div>
+        </div>
+</body>
+<script src="{% static 'website/js/jquery-1.11.1.min.js' %}"></script>
+<script src="{% static 'website/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'website/js/browse.js' %}"></script>
+<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6wIxPZOI591m4SfmoB8W3fgIYj-0zfuI"></script>-->
+<!--<script src="{% static 'website/js/browse_map.js' %}"></script> -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script>
+    // RANDOMLY CHANGE HEADER PICTURE
+    $(function() {
+        var photos = ['chandlier', 'cozy_bed', 'snow', 'window_view'];
+        var randomImage = photos[Math.floor(Math.random() * photos.length)];
+        var imageURL = 'website/img/' + randomImage + '_low_opa.jpg';
+        var url = "{% static 'website/img/chandlier_low_opa.jpg' %}";
+        $(".intro").css("background", "url(" + "{% static "" %}" + imageURL + ") no-repeat center center fixed");
+        $(".intro").css("background-size", "cover");
+        $(".intro").css("-webkit-background-size", "cover");
+        $(".intro").css("-moz-background-size", "cover");
+        $(".intro").css("-o-background-size", "cover");
+    });
+</script>
+</html>
