@@ -10,14 +10,15 @@ class UserForm(forms.ModelForm):
         super(forms.ModelForm, self).__init__(*args, **kwargs)
         self.fields['username'].help_text = None
         self.fields['email'].label = 'Email'
-        self.fields['password'].required = False
-        self.fields['confirm_password'].required = False
+        #self.fields['password'].required = False
+        #self.fields['confirm_password'].required = False
     
     def clean(self):
-        password1 = self.cleaned_data['password']
-        password2 = self.cleaned_data['confirm_password']
-        if password1 != password2:
-            raise forms.ValidationError("Your passwords didn't match.")
+        if 'password' in self.cleaned_data and 'confirm_password' in self.cleaned_data:
+            password1 = self.cleaned_data['password']
+            password2 = self.cleaned_data['confirm_password']
+            if password1 != password2:
+                raise forms.ValidationError("Your passwords didn't match.")
         return self.cleaned_data
 
     class Meta:
