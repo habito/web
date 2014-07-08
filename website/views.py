@@ -19,7 +19,7 @@ def register(request):
 		profile_form = UserProfileForm(data=request.POST)	
 		
 		if user_form.is_valid() and profile_form.is_valid():
-			user = user_form.save()
+			user = user_form.save()	
 			user.set_password(user.password)
 			user.save()
 
@@ -31,6 +31,7 @@ def register(request):
 			
 			profile.save()
 			registered = True
+		
 		else:
 			print (user_form.errors, profile_form.errors)
 	else:
@@ -47,7 +48,7 @@ def login_user(request):
 	if request.POST:
 		username = request.POST.get('username')
 		password = request.POST.get('password')
-		
+
 		user = authenticate(user=username, password=password)
 		if user is not None:
 			login(request,user)
