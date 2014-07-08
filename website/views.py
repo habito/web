@@ -5,10 +5,10 @@ from user_profile.forms import *
 
 
 def index(request):
-    return render(request, 'website/index.html', {})
+    return render(request, 'website/index.html', {'request':request})
 
 def browse(request):
-    return render(request, 'website/browse.html', {})
+    return render(request, 'website/browse.html', {'request':request})
 
 def register(request):
 	context = RequestContext(request)
@@ -39,7 +39,7 @@ def register(request):
 	
 	return render_to_response(
             'website/sign_up.html',
-            {'user_form': user_form, 'profile_form': profile_form, 'registered': registered}, context)
+            {'user_form': user_form, 'profile_form': profile_form, 'registered': registered, 'request':request}, context)
 
 def login_user(request):
 	context = RequestContext(request)
@@ -55,6 +55,6 @@ def login_user(request):
 			state = "Your username and/or password were incorrect, please try again."
 	return render_to_response(
 			'website/login.html', 
-			{}, context)
+			{'request':request}, context)
 	
 				

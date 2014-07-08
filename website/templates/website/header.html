@@ -8,6 +8,7 @@
     <meta name="keywords" content="apartment, apt, subletters, sublease, tenants">
     <title>Mauraders</title>
     {% load staticfiles %}
+    {% load custom_tags %}
     <link href="{% static 'website/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'website/css/font-awesome.min.css' %}" rel="stylesheet">
     <link href="{% static 'website/css/navbar.css' %}" rel="stylesheet">
@@ -33,7 +34,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-main-collapse">
                 <ul class="nav navbar-nav">
-                    <li class='active'>
+                    <li class="{% active_page request "browse" %}">
                         <a href="/browse">Browse</a>
                     </li>
                     <li>
@@ -44,10 +45,10 @@
                     <li class="page-scroll">
                         <a href="/#about">About</a>
                     </li>
-                    <li class="page-scroll">
+                    <li class="page-scroll  {% active_page request "login_user" %}">
                         <a href="/login">Log In</a>
                     </li>
-                    <li class="page-scroll">
+                    <li class="page-scroll  {% active_page request "register" %}">
                         <a href="/register">Sign Up</a>
                     </li>
                 </ul>

@@ -6,7 +6,7 @@ $(window).resize(function(){
   });
 });
 
-// To initially run the function:
+//To initially run the function:
 $(window).resize();
 $(window).resize();
 
