@@ -18,7 +18,10 @@ class UserForm(forms.ModelForm):
             password1 = self.cleaned_data['password']
             password2 = self.cleaned_data['confirm_password']
             if password1 != password2:
-                raise forms.ValidationError("Your passwords didn't match.")
+                msg = "Your passwords didn't match."
+                #self.add_error('password', msg)
+                #self.add_error('confirm_password', msg)
+                raise forms.ValidationError("Your passwords did not match.")
         return self.cleaned_data
 
     class Meta:
