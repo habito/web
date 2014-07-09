@@ -1,6 +1,8 @@
 from django.shortcuts import render, render_to_response
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
 from django.template import RequestContext, loader
+from django.http import HttpResponse, HttpResponseRedirect
 from user_profile.forms import *
 
 
@@ -44,18 +46,31 @@ def register(request):
 
 def login_user(request):
 	context = RequestContext(request)
-	
 	if request.POST:
+<<<<<<< HEAD
 		username = request.POST.get('username')
 		password = request.POST.get('password')
 
 		user = authenticate(user=username, password=password)
+=======
+		print('hello')
+		username = request.POST['username']
+		password = request.POST['password']
+		user = authenticate(username=username, password=password)
+		print(user)
+>>>>>>> 9036211641b1f06e866dda637295dcb91d59265d
 		if user is not None:
 			login(request,user)
+			return HttpResponseRedirect('/me')
 		else:
 			state = "Your username and/or password were incorrect, please try again."
+			print(state)
 	return render_to_response(
 			'website/login.html', 
 			{'request':request}, context)
+
+@login_required
+def me(request):
+	return render(request, 'website/me.html', {'request':request})
 	
 				

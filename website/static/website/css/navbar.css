@@ -4,11 +4,13 @@ body {
 
 .navbar {
     margin-bottom: 0;
-    /*border-bottom: 1px solid rgba(255,255,255,.3);*/
+    border-bottom: 1px solid #428bca;
     text-transform: uppercase;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     /*background-color: #000;*/
-    padding-top:20px;
+    /*padding-top:20px;*/
+    background: white;
+    color:#428bca;
 }
 
 .navbar-brand {
@@ -20,7 +22,7 @@ body {
 }
 
 .navbar-custom a {
-    color: #fff;
+    color: #428bca;
 }
 
 .navbar-custom .nav li a {
@@ -38,13 +40,13 @@ body {
 .navbar-custom .nav li.active {
     outline: 0;
     color:white;
-    background-color: rgba(255,255,255,.2);
+    background-color: #428bca;
 }
 
 .navbar-toggle {
-    padding: 4px 6px;
+    /*padding: 4px 6px;*/
     font-size: 16px;
-    color: #fff;
+    color: #428bca;
 }
 
 .navbar-toggle:focus,
@@ -59,6 +61,7 @@ body {
         border-bottom: 0;
         letter-spacing: 1px;
         background: 0 0;
+        border-bottom: none;
         -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
         -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
         transition: background .5s ease-in-out,padding .5s ease-in-out;

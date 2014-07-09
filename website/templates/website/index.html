@@ -42,12 +42,21 @@
                     <li class="page-scroll">
                         <a href="#about">About</a>
                     </li>
+                    {% if user.is_authenticated %}
+                    <li class="page-scroll">
+                        <a href="/me">{{ user.first_name }} {{ user.last_name }}</a>
+                    </li>
+                    <li class="">
+                        <a href="/logout">Logout</a>
+                    </li>
+                    {% else %}
                     <li class="page-scroll">
                         <a href="/login">Log In</a>
                     </li>
                     <li class="page-scroll">
                         <a href="/register">Sign Up</a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

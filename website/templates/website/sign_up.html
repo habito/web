@@ -8,13 +8,9 @@
     {% if registered %}
     <div class="alert alert-success" role="alert">You have successfully registered. Please check your email for a confirmation.</div>
     {% else %}
-    
-
     <form id="user_form" class="form-horizontal" method="post" action="/register/"
             enctype="multipart/form-data" role='form'>
-
         {% csrf_token %}
-
         {% for field in user_form %}
             <div class="form-group">
                 {{ field.label_tag }}
