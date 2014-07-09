@@ -47,18 +47,17 @@ def register(request):
 def login_user(request):
 	context = RequestContext(request)
 	if request.POST:
-<<<<<<< HEAD
 		username = request.POST.get('username')
 		password = request.POST.get('password')
 
 		user = authenticate(user=username, password=password)
-=======
+		
 		print('hello')
 		username = request.POST['username']
 		password = request.POST['password']
 		user = authenticate(username=username, password=password)
 		print(user)
->>>>>>> 9036211641b1f06e866dda637295dcb91d59265d
+		
 		if user is not None:
 			login(request,user)
 			return HttpResponseRedirect('/me')
