@@ -1,0 +1,14 @@
+{% extends "website/header.html" %}
+{% load staticfiles %}
+{% block stylesheets %}
+<link href="{% static 'website/css/register.css' %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div id="profile" class='auth-div'>
+<h2 class=' text-center'>{{ user.first_name }} {{ user.last_name }}</h2>
+<h3 class='lead text-center'>{{ user.email }}</h3>
+</div>
+{% endblock %}
+{% block javascript %}
+<script src="{% static 'website/js/auth_page.js' %}"></script>
+{% endblock %}

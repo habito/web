@@ -42,6 +42,15 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+                    
+                    {% if user.is_authenticated %}
+                    <li class="page-scroll  {% active_page request "me" %}">
+                        <a href="/me">{{ user.first_name }} {{ user.last_name }}</a>
+                    </li>
+                    <li class="">
+                        <a href="/logout">Logout</a>
+                    </li>
+                    {% else %}
                     <li class="page-scroll">
                         <a href="/#about">About</a>
                     </li>
@@ -51,6 +60,7 @@
                     <li class="page-scroll  {% active_page request "register" %}">
                         <a href="/register">Sign Up</a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
