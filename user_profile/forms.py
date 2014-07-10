@@ -1,11 +1,15 @@
 from django import forms
 from django.contrib.auth.models import User
 from user_profile.models import *
+from passwords.fields import PasswordField
 
 class UserForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput())
-    confirm_password = forms.CharField(widget=forms.PasswordInput())
-    	
+    #password = forms.CharField(widget=forms.PasswordInput())
+    #confirm_password = forms.CharField(widget=forms.PasswordInput())
+
+    password = PasswordField(label="Password")
+    confirm_password = PasswordField(label="Confirm Password")
+	
     def __init__(self, *args, **kwargs):
         super(forms.ModelForm, self).__init__(*args, **kwargs)
         self.fields['username'].help_text = None
