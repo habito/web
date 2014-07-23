@@ -71,5 +71,4 @@ def login_user(request):
 @login_required
 def me(request):
 	return render(request, 'website/me.html', {'request':request})
-	
-				
+

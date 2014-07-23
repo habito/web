@@ -5,13 +5,15 @@ html {
 
 body {
 	background-color:transparent;
+	font-family: Lato;
 }
 
 .navbar {
     margin-bottom: 0;
     text-transform: uppercase;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: Lato,"Helvetica Neue",Helvetica,Arial,sans-serif;
     padding-top:20px;
+    font-weight: 300;
 }
 
 .navbar-brand {
