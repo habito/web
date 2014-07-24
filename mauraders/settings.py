@@ -40,7 +40,6 @@ INSTALLED_APPS = (
     'user_profile',
     'listings',
     'general_models',
-    'passwords',
 )
 
 PASSWORD_MIN_LENGTH = 6
