@@ -20,8 +20,12 @@
         {% csrf_token %}
         {% for field in user_form %}
         <div class="form-group">
+            {% if field.html_name == 'password' or field.html_name == 'confirm_password' %}
+            <input class="form-control" name="{{ field.html_name }}" maxlength="{{ field.field.max_length }}" type="password" placeholder="{{ field.label }}">
+            {% else %}
             <input class="form-control" name="{{ field.html_name }}" maxlength="{{ field.field.max_length }}" type="text" placeholder="{{ field.label }}">
-        {{ field.errors }}
+            {% endif %}
+            {{ field.errors }}
         </div>
         {% endfor %}
         <!-- Provide a button to click to submit the form. -->
