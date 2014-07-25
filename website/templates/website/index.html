@@ -208,7 +208,7 @@
 	$(function() {
 		var photos = ['chandlier', 'cozy_bed', 'snow', 'window_view'];
 		var randomImage = photos[Math.floor(Math.random() * photos.length)];
-		var imageURL = 'website/img/' + randomImage + '_low_opa.jpg';
+		var imageURL = 'website/img/' + randomImage + '_low_opa_compressed.jpg';
 		var url = "{% static 'website/img/chandlier_low_opa.jpg' %}";
 		$(".intro").css("background", "url(" + "{% static "" %}" + imageURL + ") no-repeat center center fixed");
 		$(".intro").css("background-size", "cover");
