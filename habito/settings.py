@@ -1,5 +1,5 @@
 """
-Django settings for mauraders project.
+Django settings for habito project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -54,9 +54,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'mauraders.urls'
+ROOT_URLCONF = 'habito.urls'
 
-WSGI_APPLICATION = 'mauraders.wsgi.application'
+WSGI_APPLICATION = 'habito.wsgi.application'
 
 
 # Database
@@ -65,7 +65,7 @@ WSGI_APPLICATION = 'mauraders.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mauraders',
+        'NAME': 'habito',
         'USER': 'h',
         'PASSWORD': 'p',
         'PORT': '5432',

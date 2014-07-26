@@ -3,10 +3,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="Mauraders">
+    <meta name="author" content="habito">
     <meta name="description" content="Looking to find an apartment? Have a place to lease? We connect apartment owners, tenants, and subletters. Finding an apartment has never been easier.">
     <meta name="keywords" content="apartment, apt, subletters, sublease, tenants">
-    <title>Mauraders</title>
+    <title>habito</title>
     {% load staticfiles %}
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
     <link href="{% static 'website/css/bootstrap.css' %}" rel="stylesheet">
@@ -22,7 +22,7 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="#page-top">
-                    Mauraders
+                    habito
                 </a>
 
             </div>
@@ -183,7 +183,7 @@
                 </div>
                 <div class="col-lg-6">
                     <p><t>Email</t><br/>
-                        mauradersdev@gmail.com<br/>
+                        habitodev@gmail.com<br/>
                     </p>
                 </div>
                 <div class="col-lg-3">
@@ -206,7 +206,7 @@
 <script>
 	// RANDOMLY CHANGE HEADER PICTURE
 	$(function() {
-		var photos = ['chandlier', 'cozy_bed', 'snow', 'window_view', 'balloon', 'chairs', 'craft', 'desk', 'gg', 'narrow', 'office_bw', 'water'];
+		var photos = ['chandlier', 'cozy_bed', 'snow', 'window_view', 'balloon', 'craft', 'desk', 'gg', 'narrow', 'office_bw', 'water'];
 		var randomImage = photos[Math.floor(Math.random() * photos.length)];
 		var imageURL = 'website/img/' + randomImage + '_low_opa_compressed.jpg';
 		var url = "{% static 'website/img/chandlier_low_opa.jpg' %}";
