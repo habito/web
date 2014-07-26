@@ -1,1 +1,1 @@
-web: gunicorn mauraders.wsgi
+web: gunicorn habito.wsgi
