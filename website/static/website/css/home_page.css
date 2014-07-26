@@ -5,7 +5,7 @@ html {
 
 body {
 	background-color:transparent;
-	font-family: Lato;
+	font-family: Lato,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .navbar {
@@ -14,6 +14,9 @@ body {
     font-family: Lato,"Helvetica Neue",Helvetica,Arial,sans-serif;
     padding-top:20px;
     font-weight: 300;
+    -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+    -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+    transition: background .5s ease-in-out,padding .5s ease-in-out;
 }
 
 .navbar-brand {
@@ -47,7 +50,6 @@ body {
 }
 
 .navbar-toggle {
-    padding: 4px 6px;
     font-size: 16px;
     color: #fff;
 }
@@ -55,6 +57,36 @@ body {
 .navbar-toggle:focus,
 .navbar-toggle:active {
     outline: 0;
+}
+
+.top-nav-collapse {
+    padding: 0;
+    background-color: white;
+}
+
+.top-nav-collapse .navbar-toggle {
+    color:#428bca;
+}
+
+.top-nav-collapse a {
+    color: #428bca;
+}
+.top-nav-collapse li.active a {
+    color:white;
+    background-color:#428bca;
+}
+
+.top-nav-collapse .nav li a:hover,
+.top-nav-collapse .nav li a:focus,
+.top-nav-collapse .nav li.active {
+    outline: 0;
+    color:white;
+    background-color: #428bca;
+}
+
+.navbar-custom.top-nav-collapse {
+    border-bottom: 1px solid #eee;
+    /*border-bottom: 1px solid rgba(255,255,255,.3);*/
 }
 
 @media(min-width:767px) {
@@ -128,6 +160,7 @@ body {
 
 /* ABOUT */
 #about {
+    margin-top:50px;
 	padding: 50px;
 }
 

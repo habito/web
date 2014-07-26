@@ -5,11 +5,9 @@ body {
 
 .navbar {
     margin-bottom: 0;
-    border-bottom: 1px solid #428bca;
+    border-bottom: 1px solid #eee;
     text-transform: uppercase;
     font-family: Lato,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    /*background-color: #000;*/
-    /*padding-top:20px;*/
     background: white;
     color:#428bca;
     font-weight:300;
@@ -92,6 +90,5 @@ body {
 
     .navbar-custom.top-nav-collapse {
         border-bottom: 1px solid #eee;
-        /*border-bottom: 1px solid rgba(255,255,255,.3);*/
     }
 }
