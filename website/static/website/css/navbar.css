@@ -93,6 +93,13 @@ body {
     }
 }
 
+.post-listing {
+    padding:5px;
+    margin-top:10px;
+    color:white;
+    font-weight:300
+}
+
 /** Dropdown **/
 .dropdown-menu .dropdown-a {
     color: #428bca;

@@ -196,6 +196,13 @@ section h2.section-heading {
 	background-color:white;
 }
 
+.post-listing {
+    padding:5px;
+    margin-top:10px;
+    color:white;
+    font-weight:300
+}
+
 /** FRONT PAGE INPUT **/
 .home-search {
     background:transparent;
