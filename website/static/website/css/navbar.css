@@ -92,3 +92,24 @@ body {
         border-bottom: 1px solid #eee;
     }
 }
+
+/** Dropdown **/
+.dropdown-menu .dropdown-a {
+    color: #428bca;
+}
+
+.dropdown-menu {
+    min-width:0;
+}
+
+.navbar-nav > li > .dropdown-menu {
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
+}
+
+.top-nav-collapse .nav .open > a,
+.top-nav-collapse .nav .open > a:hover,
+.top-nav-collapse .nav .open > a:focus {
+  background-color: #428bca;
+  color:white;
+}

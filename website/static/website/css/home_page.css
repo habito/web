@@ -45,7 +45,7 @@ body {
 .navbar-custom .nav li a:focus,
 .navbar-custom .nav li.active {
     outline: 0;
-    color:white;
+/*    color:white;*/
     background-color: rgba(255,255,255,.2);
 }
 
@@ -213,4 +213,43 @@ FF 19+
 IE 10+ 
 .home-search-field:-ms-input-placeholder {
     color: white;
+}
+
+/** Dropdown **/
+.dropdown-menu .dropdown-a {
+    color: #428bca;
+}
+
+a.dropdown-a:hover {
+    background-color:#428bca;
+}
+
+.navbar-nav > li > .dropdown-menu {
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
+}
+
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus {
+  background-color: rgba(255,255,255,.2);
+}
+
+.top-nav-collapse .nav .open > a,
+.top-nav-collapse .nav .open > a:hover,
+.top-nav-collapse .nav .open > a:focus {
+  background-color: #428bca;
+  color:white;
+}
+
+
+.dropdown-menu > li > a.dropdown-a:hover, .dropdown-menu > li > a.dropdown-a:focus {
+    background-color:#428bca;
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    color:white;
+}
+
+.dropdown-menu {
+    min-width:0;
 }

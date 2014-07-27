@@ -8,6 +8,7 @@
     <meta name="keywords" content="apartment, apt, subletters, sublease, tenants">
     <title>Habito</title>
     {% load staticfiles %}
+    {% load custom_tags %}
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
     <link href="{% static 'website/css/bootstrap.css' %}" rel="stylesheet">
     <link href="{% static 'website/css/font-awesome.min.css' %}" rel="stylesheet">
@@ -45,11 +46,12 @@
                         <a href="#about">About</a>
                     </li>
                     {% if user.is_authenticated %}
-                    <li class="page-scroll">
-                        <a href="/me">{{ user.first_name }} {{ user.last_name }}</a>
-                    </li>
-                    <li class="">
-                        <a href="/logout">Logout</a>
+                    <li class="dropdown">
+                        <a href="/me" class="dropdown-toggle {% active_page request "me" %}" data-hover="dropdown">{{ user.first_name }} <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#" class="dropdown-a">Settings</a></li>
+                            <li><a href="/logout" class="dropdown-a">Logout</a></li>
+                        </ul>
                     </li>
                     {% else %}
                     <li class="page-scroll">
@@ -86,15 +88,6 @@
     <!-- About Section -->
     <section id="about">
         <div class="container">
-<!--
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">About</h2>
-                    <br>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
--->
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="timeline">
@@ -104,13 +97,10 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-<!--                                    <h4>2009-2011</h4>-->
 
                                     <h2 class="subheading" style="font-weight:100; font-size:25px;">Looking to find a place?</h2>
                                 </div>
                                 <div class="timeline-body">
-                                   
-<!--                                    <p class="text-muted">Looking to find an apartment?</p>-->
                                 </div>
                             </div>
                         </li>
@@ -120,15 +110,9 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-<!--
-                                    <h4>March 2011</h4>
-                                    <h4 class="subheading">An Agency is Born</h4>
--->
                                    <h2 class="subheading" style="font-weight:100; font-size:25px;">Have a place to lease?</h2>
                                 </div>
                                 <div class="timeline-body">
-                                
-<!--                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>-->
                                 </div>
                             </div>
                         </li>
@@ -138,12 +122,9 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-<!--                                    <h4>December 2012</h4>-->
-<!--                                    <h4 class="subheading">Transition to Full Service</h4>-->
                                    <h2 class="subheading" style="font-weight:100; font-size:25px;">We connect apartment owners, tenants, and subletters.</h2>
                                 </div>
                                 <div class="timeline-body">
-<!--                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>-->
                                 </div>
                             </div>
                         </li>
@@ -153,12 +134,9 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-<!--                                    <h4>July 2014</h4>-->
-<!--                                    <h4 class="subheading">Phase Two Expansion</h4>-->
                                    <h2 class="subheading" style="font-weight:100; font-size:25px;">Finding an apartment has never been easier.</h2>
                                 </div>
                                 <div class="timeline-body">
-<!--                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>-->
                                 </div>
                             </div>
                         </li>
@@ -201,6 +179,7 @@
 </body>
 <script src="{% static 'website/js/jquery-1.11.1.min.js' %}"></script>
 <script src="{% static 'website/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'website/js/bootstrap-hover-dropdown.min.js' %}"></script>
 <script src="{% static 'website/js/home_page.js' %}"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script>
