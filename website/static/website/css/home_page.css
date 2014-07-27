@@ -235,6 +235,7 @@ IE 10+
 
 .dropdown-menu .dropdown-a {
     color:white;
+    font-weight:100;
 }
 
 a.dropdown-a:hover {

@@ -96,6 +96,7 @@ body {
 /** Dropdown **/
 .dropdown-menu .dropdown-a {
     color: #428bca;
+    font-weight:100;
 }
 
 .dropdown-menu {
