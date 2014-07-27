@@ -216,8 +216,13 @@ IE 10+
 }
 
 /** Dropdown **/
+.dropdown-menu {
+    background-color: rgba(255,255,255,.2);
+    border:none;
+}
+
 .dropdown-menu .dropdown-a {
-    color: #428bca;
+    color:white;
 }
 
 a.dropdown-a:hover {
@@ -242,6 +247,13 @@ a.dropdown-a:hover {
   color:white;
 }
 
+.top-nav-collapse .dropdown-menu {
+    background-color:white;
+}
+
+.top-nav-collapse .dropdown-menu .dropdown-a {
+    color:#428bca;
+}
 
 .dropdown-menu > li > a.dropdown-a:hover, .dropdown-menu > li > a.dropdown-a:focus {
     background-color:#428bca;
