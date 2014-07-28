@@ -1,0 +1,149 @@
+{% extends "website/header.html" %}
+{% load staticfiles %}
+{% block stylesheets %}
+<link href="{% static 'website/css/post.css' %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<section class="main">
+<div class="panel panel-body content-panel" style="max-width:520px;margin-left:auto; margin-right:auto;">
+    <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label">Home Type</label>
+        <div class="col-sm-10">
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-default btn-lg active">
+                <input type="radio" name="options" id="option1" checked><i class="fa fa-2x fa-building-o"></i>  Apartment
+              </label>
+              <label class="btn btn-default btn-lg">
+                <input type="radio" name="options" id="option2"><i class="fa fa-2x fa-home"></i>  House
+              </label>
+            </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">Room Type</label>
+        <div class="col-sm-10">
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-default btn-lg active">
+                <input type="radio" name="room-type" id="option1" checked>Entire Place
+              </label>
+              <label class="btn btn-lg btn-default">
+                <input type="radio" name="room-type" id="option2">Private Room
+              </label>
+              <label class="btn btn-lg btn-default">
+                <input type="radio" name="room-type" id="option3">Shared Room
+              </label>
+            </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">Accomodates</label>
+        <div class="col-sm-10">
+            <div class="btn-group" data-toggle="buttons">
+              <label for="" class="btn btn-lg btn-default active"><input type="radio" name="accomdates" id="1" checked>1</label>
+              <label for="" class="btn btn-lg btn-default"><input type="radio" name="accomdates" id="2">2</label>
+              <label for="" class="btn btn-lg btn-default"><input type="radio" name="accomdates" id="3">3</label>
+              <label for="" class="btn btn-lg btn-default"><input type="radio" name="accomdates" id="4">4</label>
+              <label for="" class="btn btn-lg btn-default"><input type="radio" name="accomdates" id="5">5</label>
+              <label for="" class="btn btn-lg btn-default"><input type="radio" name="accomdates" id="6">6</label>
+              <label for="" class="btn btn-lg btn-default"><input type="radio" name="accomdates" id="7">7</label>
+              <label for="" class="btn btn-lg btn-default"><input type="radio" name="accomdates" id="8">8</label>
+              <label for="" class="btn btn-lg btn-default"><input type="radio" name="accomdates" id="9">9</label>
+            </div>
+        </div>
+      </div>
+      <div class="form-group text-center">
+          <button type="submit" class="btn btn-default btn-lg">Submit</button>
+      </div>
+    </form>
+</div>
+</section>
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+            
+                <div class="col-xs-2">
+                    <h3>HABITO</h3>
+                </div>
+                <div class="col-xs-6">
+                    <p class="links">
+                        <a href="#">About</a><br/>
+                        <a href="#">Press</a><br/>
+                        <a href="#">Blog</a><br/>
+                        <a href="#">Help</a><br/>
+                        <a href="#">Policies</a><br/>
+                        <a href="#">Terms &amp; Privacy</a>
+                    </p>
+                </div>
+                <div class="col-xs-4 text-center">
+                    <br/>
+                    <p>
+                        <a href="#">
+                          <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle-thin fa-stack-2x" style="color:white"></i>
+                              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                          </span>
+                        </a>
+                        <a href="#">
+                          <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle-thin fa-stack-2x" style="color:white"></i>
+                              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                          </span>
+                        </a>
+                        <a href="#">
+                          <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle-thin fa-stack-2x" style="color:white"></i>
+                              <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                          </span>
+                        </a>
+                        <a href="#">
+                          <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle-thin fa-stack-2x" style="color:white"></i>
+                              <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                          </span>
+                        </a>
+                    </p>
+                </div>
+            </div><!--/.row -->
+        </div><!--/.container -->
+    </section>
+{% endblock %}
+{% block javascript %}
+<script src="{% static 'website/js/post.js' %}"></script>
+<script>
+$('.main').resize(function(){
+    if ($('.main').height() <= 600) {
+        $('.content-panel').css({
+            marginTop: '50px',
+            position:'relative',
+            top: 'auto', 
+            left: ($('.main').width() - $('.content-panel').outerWidth())/2
+        });
+    } else {
+        $('.content-panel').css({
+            position:'absolute',
+            marginTop: '0px',
+            top: ($('.main').height() - $('.content-panel').outerHeight())/2,
+            left: ($('.main').width() - $('.content-panel').outerWidth())/2
+        });
+    }
+});
+
+//To initially run the function:
+$(window).resize();
+$(window).resize();
+</script>
+<script>
+	// RANDOMLY CHANGE HEADER PICTURE
+	$(function() {
+		var photos = ['snow', 'balloon', 'craft', 'gg', 'narrow', 'office_bw', 'water'];
+		var randomImage = photos[Math.floor(Math.random() * photos.length)];
+		var imageURL = 'website/img/banner/' + randomImage + '_low_opa_compressed.jpg';
+		$(".main").css("background", "url(" + "{% static "" %}" + imageURL + ") no-repeat center center fixed");
+		$(".main").css("background-size", "cover");
+		$(".main").css("-webkit-background-size", "cover");
+		$(".main").css("-moz-background-size", "cover");
+		$(".main").css("-o-background-size", "cover");
+	});
+</script>
+{% endblock %}

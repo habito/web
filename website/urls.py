@@ -10,4 +10,5 @@ urlpatterns = patterns('',
     url(r'^login/$', 'website.views.login_user', name='login_user'),
     url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
     url(r'^me/$', 'website.views.me', name='me'),
+    url(r'^post/$', 'website.views.post', name='post'),
 )

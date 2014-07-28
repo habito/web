@@ -12,6 +12,12 @@ def index(request):
 def browse(request):
     return render(request, 'website/browse.html', {'request':request})
 
+def post(request):
+    context = RequestContext(request)
+    return render_to_response(
+            'website/post.html',
+            {'request':request}, context)
+
 def register(request):
 	context = RequestContext(request)
 	registered = False
