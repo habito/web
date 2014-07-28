@@ -11,10 +11,10 @@
         <label for="inputPassword3" class="col-sm-2 control-label">Home Type</label>
         <div class="col-sm-10">
             <div class="btn-group" data-toggle="buttons">
-              <label class="btn btn-default btn-lg active">
+              <label class="btn btn-default radio-btn btn-lg active">
                 <input type="radio" name="options" id="option1" checked><i class="fa fa-2x fa-building-o"></i>  Apartment
               </label>
-              <label class="btn btn-default btn-lg">
+              <label class="btn btn-default radio-btn btn-lg">
                 <input type="radio" name="options" id="option2"><i class="fa fa-2x fa-home"></i>  House
               </label>
             </div>
@@ -24,13 +24,13 @@
         <label for="inputEmail3" class="col-sm-2 control-label">Room Type</label>
         <div class="col-sm-10">
             <div class="btn-group" data-toggle="buttons">
-              <label class="btn btn-default btn-lg active">
+              <label class="btn btn-default btn-lg radio-btn active">
                 <input type="radio" name="room-type" id="option1" checked>Entire Place
               </label>
-              <label class="btn btn-lg btn-default">
+              <label class="btn btn-lg radio-btn btn-default">
                 <input type="radio" name="room-type" id="option2">Private Room
               </label>
-              <label class="btn btn-lg btn-default">
+              <label class="btn btn-lg radio-btn btn-default">
                 <input type="radio" name="room-type" id="option3">Shared Room
               </label>
             </div>
@@ -40,15 +40,15 @@
         <label for="inputEmail3" class="col-sm-2 control-label">Accomodates</label>
         <div class="col-sm-10">
             <div class="btn-group" data-toggle="buttons">
-              <label for="" class="btn btn-lg btn-default active"><input type="radio" name="accomdates" id="1" checked>1</label>
-              <label for="" class="btn btn-lg btn-default"><input type="radio" name="accomdates" id="2">2</label>
-              <label for="" class="btn btn-lg btn-default"><input type="radio" name="accomdates" id="3">3</label>
-              <label for="" class="btn btn-lg btn-default"><input type="radio" name="accomdates" id="4">4</label>
-              <label for="" class="btn btn-lg btn-default"><input type="radio" name="accomdates" id="5">5</label>
-              <label for="" class="btn btn-lg btn-default"><input type="radio" name="accomdates" id="6">6</label>
-              <label for="" class="btn btn-lg btn-default"><input type="radio" name="accomdates" id="7">7</label>
-              <label for="" class="btn btn-lg btn-default"><input type="radio" name="accomdates" id="8">8</label>
-              <label for="" class="btn btn-lg btn-default"><input type="radio" name="accomdates" id="9">9</label>
+              <label for="" class="btn btn-lg btn-default radio-btn active"><input type="radio" name="accomdates" id="1" checked>1</label>
+              <label for="" class="btn btn-lg btn-default radio-btn"><input type="radio" name="accomdates" id="2">2</label>
+              <label for="" class="btn btn-lg btn-default radio-btn"><input type="radio" name="accomdates" id="3">3</label>
+              <label for="" class="btn btn-lg btn-default radio-btn"><input type="radio" name="accomdates" id="4">4</label>
+              <label for="" class="btn btn-lg btn-default radio-btn"><input type="radio" name="accomdates" id="5">5</label>
+              <label for="" class="btn btn-lg btn-default radio-btn"><input type="radio" name="accomdates" id="6">6</label>
+              <label for="" class="btn btn-lg btn-default radio-btn"><input type="radio" name="accomdates" id="7">7</label>
+              <label for="" class="btn btn-lg btn-default radio-btn"><input type="radio" name="accomdates" id="8">8</label>
+              <label for="" class="btn btn-lg btn-default radio-btn"><input type="radio" name="accomdates" id="9">9</label>
             </div>
         </div>
       </div>
@@ -111,6 +111,20 @@
 {% block javascript %}
 <script src="{% static 'website/js/post.js' %}"></script>
 <script>
+$(window).resize(function() {
+    if ($(window).width() <= 766) {
+        $('.content-panel').css('max-width', '425px');
+    } else {
+        $('.content-panel').css('max-width', '520px');
+    }
+    if ($(window).width() <= 450) {
+        $('.content-panel').css('max-width', '340px');
+        $('.radio-btn').removeClass('btn-lg');
+    } else {
+        $('.radio-btn').addClass('btn-lg');
+    }
+});
+    
 $('.main').resize(function(){
     if ($('.main').height() <= 600) {
         $('.content-panel').css({
