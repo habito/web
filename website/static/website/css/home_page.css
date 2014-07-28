@@ -200,7 +200,9 @@ section h2.section-heading {
     padding:5px;
     margin-top:10px;
     color:white;
-    font-weight:300
+    font-weight:300;
+    border-radius:0;
+    margin-left:5;
 }
 
 /** FRONT PAGE INPUT **/
