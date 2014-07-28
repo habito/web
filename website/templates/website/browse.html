@@ -7,7 +7,7 @@
     <section id="listings">
         <div id='left-bar' class='col-xs-3'>
             <div id='refine-search'>
-                <span>REFINE SEARCH</span> <i class='glyphicon glyphicon-chevron-down'></i>
+                <span>REFINE SEARCH</span> <i class='fa fa-bars'></i>
             </div>
             <div class="list-group">
               <a href="#" class="list-group-item">
@@ -49,7 +49,7 @@
 {% endblock %}
 
 {% block javascript %}
-<script src="{% static 'website/js/browse.js' %}"></script>
+<script src="{% static 'website/js/browse/browse.js' %}"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6wIxPZOI591m4SfmoB8W3fgIYj-0zfuI"></script>
-<script src="{% static 'website/js/browse_map.js' %}"></script>
+<script src="{% static 'website/js/browse/browse_map.js' %}"></script>
 {% endblock %}

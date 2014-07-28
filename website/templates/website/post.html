@@ -63,10 +63,10 @@
             <div class="row">
             
                 <div class="col-xs-2">
-                    <h3>HABITO</h3>
+                    <h3 style="font-weight:300">HABITO</h3>
                 </div>
-                <div class="col-xs-6">
-                    <p class="links">
+                <div class="col-xs-5 col-xs-offset-1">
+                    <p class="links" style="font-weight:300">
                         <a href="#">About</a><br/>
                         <a href="#">Press</a><br/>
                         <a href="#">Blog</a><br/>
@@ -110,54 +110,11 @@
 {% endblock %}
 {% block javascript %}
 <script src="{% static 'website/js/post.js' %}"></script>
-<script>
-$(window).resize(function() {
-    if ($(window).width() <= 766) {
-        $('.content-panel').css('max-width', '425px');
-    } else {
-        $('.content-panel').css('max-width', '520px');
-    }
-    if ($(window).width() <= 450) {
-        $('.content-panel').css('max-width', '340px');
-        $('.radio-btn').removeClass('btn-lg');
-    } else {
-        $('.radio-btn').addClass('btn-lg');
-    }
-});
-    
-$('.main').resize(function(){
-    if ($('.main').height() <= 600) {
-        $('.content-panel').css({
-            marginTop: '50px',
-            position:'relative',
-            top: 'auto', 
-            left: ($('.main').width() - $('.content-panel').outerWidth())/2
-        });
-    } else {
-        $('.content-panel').css({
-            position:'absolute',
-            marginTop: '0px',
-            top: ($('.main').height() - $('.content-panel').outerHeight())/2,
-            left: ($('.main').width() - $('.content-panel').outerWidth())/2
-        });
-    }
-});
-
-//To initially run the function:
-$(window).resize();
-$(window).resize();
-</script>
+<script src="{% static 'website/js/gen/cover-pic.js' %}"></script>
 <script>
 	// RANDOMLY CHANGE HEADER PICTURE
 	$(function() {
-		var photos = ['snow', 'balloon', 'craft', 'gg', 'narrow', 'office_bw', 'water'];
-		var randomImage = photos[Math.floor(Math.random() * photos.length)];
-		var imageURL = 'website/img/banner/' + randomImage + '_low_opa_compressed.jpg';
-		$(".main").css("background", "url(" + "{% static "" %}" + imageURL + ") no-repeat center center fixed");
-		$(".main").css("background-size", "cover");
-		$(".main").css("-webkit-background-size", "cover");
-		$(".main").css("-moz-background-size", "cover");
-		$(".main").css("-o-background-size", "cover");
+		loadCoverPic(".main", {{ STATIC_URL }});
 	});
 </script>
 {% endblock %}
