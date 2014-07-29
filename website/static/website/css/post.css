@@ -47,8 +47,8 @@ label .btn-group {
 /** FOOTER */
 #footer {
     color:white;
-    padding-top:50px;
-    padding-bottom:50px;
+    padding-top:25px;
+    padding-bottom:25px;
     background-color:#428bca;
     width:100%;
 }
