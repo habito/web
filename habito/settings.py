@@ -65,9 +65,10 @@ WSGI_APPLICATION = 'habito.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'habito',
-        'USER': 'h',
-        'PASSWORD': 'p',
+        'NAME': 'habitodb',
+        'USER': 'habitosu',
+        'PASSWORD': "I'muptonogood7",
+        'HOST': "habitodb.cafab1n3bntf.us-west-1.rds.amazonaws.com",
         'PORT': '5432',
     }
 }
@@ -93,9 +94,9 @@ STATIC_URL = '/static/'
 
 ####### FOR HEROKU #######
 # Parse database configuration from $DATABASE_URL
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config( \
-        default='postgres://gttdtxbozzrtdl:hikhzG_KtascQjKOoXq5tM3fO8@ec2-54-204-41-178.compute-1.amazonaws.com:5432/dfrvvpmo25uvs3')
+#import dj_database_url
+#DATABASES['default'] =  dj_database_url.config( \
+        #default='postgres://gttdtxbozzrtdl:hikhzG_KtascQjKOoXq5tM3fO8@ec2-54-204-41-178.compute-1.amazonaws.com:5432/dfrvvpmo25uvs3')
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
