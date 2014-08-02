@@ -29,6 +29,17 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.core.context_processors.request",
+    "allauth.account.context_processors.account",
+    "allauth.socialaccount.context_processors.socialaccount",
+)
+
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,6 +51,12 @@ INSTALLED_APPS = (
     'user_profile',
     'listings',
     'general_models',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    #include any social account provide you want to provide.
+    'allauth.socialaccount.providers.facebook',
 )
 
 PASSWORD_MIN_LENGTH = 6
