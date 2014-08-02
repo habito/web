@@ -31,8 +31,10 @@ ALLOWED_HOSTS = []
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.request",
+    "django.contrib.auth.context_processors.auth",
     "allauth.account.context_processors.account",
     "allauth.socialaccount.context_processors.socialaccount",
+
 )
 
 AUTHENTICATION_BACKENDS = (
@@ -58,6 +60,8 @@ INSTALLED_APPS = (
     #include any social account provide you want to provide.
     'allauth.socialaccount.providers.facebook',
 )
+
+SITE_ID = 1
 
 PASSWORD_MIN_LENGTH = 6
 PASSWORD_COMPLEXITY = {"UPPER": 1, "LOWER": 1, "DIGITS": 1}
