@@ -42,8 +42,6 @@ INSTALLED_APPS = (
     'general_models',
 )
 
-PASSWORD_MIN_LENGTH = 6
-PASSWORD_COMPLEXITY = {"UPPER": 1, "LOWER": 1, "DIGITS": 1}
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
