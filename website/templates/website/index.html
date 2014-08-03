@@ -46,7 +46,8 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="dropdown">
-                        <a href="/me" class="dropdown-toggle {% active_page request "me" %}" data-hover="dropdown">{{ user.first_name }} <span class="caret"></span></a>
+                        <img src="{{ request.user.profile.profile_image_url }}"/>
+                        <a href="/me" class="dropdown-toggle {% active_page request "me" %}" data-hover="dropdown">{{ user }} <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#" class="dropdown-a">Settings</a></li>
                             <li><a href="/logout" class="dropdown-a">Logout</a></li>
