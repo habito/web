@@ -128,6 +128,11 @@ section h2.section-heading {
     font-weight:100;
 }
 
+#profile-img-nav {
+    max-width:17.5px;
+    max-height:17.5px;
+}
+
 /* INTRO */
 .intro {
     display: table;

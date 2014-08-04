@@ -1,11 +1,13 @@
 {% extends "website/header.html" %}
 {% load staticfiles %}
+{% load custom_tags %}
 {% block stylesheets %}
 <link href="{% static 'website/css/user.css' %}" rel="stylesheet">
 {% endblock %}
 {% block content %}
-<div id="profile" class='auth-div'>
+<div id="profile" class='auth-div text-center'>
 <h2 class=' text-center'>{{ user.first_name }} {{ user.last_name }}</h2>
+<img src="{% profile_image user 100 %}" />
 <h3 class='lead text-center'>{{ user.email }}</h3>
 </div>
 {% endblock %}

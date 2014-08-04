@@ -46,8 +46,12 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="dropdown">
+<<<<<<< HEAD
                         <img src="{{ request.user.profile.profile_image_url }}"/>
                         <a href="/me" class="dropdown-toggle {% active_page request "me" %}" data-hover="dropdown">{{ user }} <span class="caret"></span></a>
+=======
+                        <a href="/me" class="dropdown-toggle {% active_page request "me" %}" data-hover="dropdown"><img id="profile-img-nav" src="{% profile_image user 18 %}" /> {{ user.first_name }} <span class="caret"></span></a>
+>>>>>>> master
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#" class="dropdown-a">Settings</a></li>
                             <li><a href="/logout" class="dropdown-a">Logout</a></li>
@@ -55,10 +59,10 @@
                     </li>
                     {% else %}
                     <li class="page-scroll">
-                        <a href="/login">Log In</a>
+                        <a href="/accounts/login">Log In</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="/register">Sign Up</a>
+                        <a href="/accounts/signup">Sign Up</a>
                     </li>
                     {% endif %}
                     <li>
@@ -230,7 +234,7 @@
                               <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
                           </span>
                         </a>
-                        <a href="#">
+                        <a href="https://www.linkedin.com/company/3810081">
                           <span class="fa-stack fa-lg">
                               <i class="fa fa-circle-thin fa-stack-2x" style="color:white"></i>
                               <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
