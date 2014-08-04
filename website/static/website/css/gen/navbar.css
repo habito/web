@@ -125,3 +125,8 @@ body {
   background-color: #428bca;
   color:white;
 }
+
+#profile-img-nav {
+    max-width:17.5px;
+    max-height:17.5px;
+}

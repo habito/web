@@ -10,3 +10,7 @@ def active_page(request, view_name):
         return "active" if resolve(request.path_info).url_name == view_name else "" 
     except Resolver404:
         return ""
+
+@register.simple_tag
+def profile_image(user, dim):
+	return user.profile.profile_image_url(dim)
