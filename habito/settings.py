@@ -28,8 +28,11 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+import django.conf.global_settings as DEFAULT_SETTINGS
 
-TEMPLATE_CONTEXT_PROCESSORS = (
+TEMPLATE_CONTEXT_PROCESSORS = DEFAULT_SETTINGS.TEMPLATE_CONTEXT_PROCESSORS
+
+TEMPLATE_CONTEXT_PROCESSORS += (
     "django.core.context_processors.request",
     "django.contrib.auth.context_processors.auth",
     "allauth.account.context_processors.account",
@@ -42,6 +45,22 @@ AUTHENTICATION_BACKENDS = (
     "allauth.account.auth_backends.AuthenticationBackend",
 )
 
+ALLAUTH_APPS = (
+    # The Django sites framework is required
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+)
+
+HABITO_APPS = (
+    'website',
+    'user_profile',
+    'listings',
+    'general_models',
+)
+
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -49,17 +68,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'website',
-    'user_profile',
-    'listings',
-    'general_models',
-    'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    #include any social account provide you want to provide.
-    'allauth.socialaccount.providers.facebook',
 )
+
+INSTALLED_APPS += HABITO_APPS
+INSTALLED_APPS += ALLAUTH_APPS
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
