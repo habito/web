@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login
 from django.template import RequestContext, loader
 from django.http import HttpResponse, HttpResponseRedirect
 from user_profile.forms import *
+from user_profile.models import UserProfile 
 
 def register(request):
 	context = RequestContext(request)
@@ -63,4 +64,41 @@ def login_user(request):
 
 @login_required
 def me(request):
-	return render(request, 'website/me.html', {'request':request})
+	user = request.user
+	up = UserProfile.objects.get(user=user)
+	profile_pic_form = ProfilePicChangeForm()
+
+	if request.POST.get('name', False) == 'email':
+		user.email = request.POST['value']
+		user.save()
+	elif request.POST.get('name', False) == 'phone_number':
+		up.phone_number = request.POST['value']
+		up.save()
+	elif request.POST.get('name', False) == 'start_date':
+		up.start_date = request.POST['value']
+		up.save()
+	elif request.POST.get('name', False) == 'end_date':
+		up.end_date = request.POST['value']
+		up.save
+	elif request.POST.get('name', False) == 'annual_pay':
+		up.annual_pay = request.POST['value']
+		up.save()
+	elif 'picture' in request.FILES:
+		profile_pic_form = ProfilePicChangeForm(request.POST, request.FILES)
+		if profile_pic_form.is_valid():
+			up.picture = request.FILES['picture']
+			up.save()
+
+	return render_to_response('website/me.html', context_instance=RequestContext(request, {'up':up, 'profile_pic': profile_pic_form}))
+
+
+
+
+
+
+
+
+
+
+
+
