@@ -7,5 +7,6 @@ from user_profile.forms import *
 
 
 def index(request):
+	
     return render(request, 'website/index.html', {'request':request})
 

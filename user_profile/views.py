@@ -4,7 +4,9 @@ from django.contrib.auth import authenticate, login
 from django.template import RequestContext, loader
 from django.http import HttpResponse, HttpResponseRedirect
 from user_profile.forms import *
-from user_profile.models import UserProfile 
+from user_profile.models import UserProfile
+from user_profile.models import * 
+from django.forms import *
 
 def register(request):
 	context = RequestContext(request)

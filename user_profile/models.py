@@ -4,16 +4,36 @@ import datetime
 # to display users facebook profile pic
 from allauth.socialaccount.models import SocialAccount
 from allauth.account.models import EmailAddress
+from django.forms.fields import MultipleChoiceField
 
 class UserProfile(models.Model):
+    
+    HOME_TYPES = (
+        (1, 'Apartment'),
+        (2, 'House'),
+    )      
+
+    ROOM_TYPES = (
+        (1, 'Entire Place'),
+        (2, 'Private Room'),
+        (3, 'Shared Room'),
+    )
+
+
     user = models.OneToOneField(User, related_name='profile')
     profile_pic = models.ImageField(upload_to='profile_images', default='profile_images/pp.png')
     phone_number = models.IntegerField(blank=True, null=True)
     start_date = models.DateField(blank=True, null=True)
     end_date = models.DateField(blank=True, null=True)
     annual_pay = models.IntegerField(blank=True, null=True)
-    document = models.FileField(upload_to='documents', blank=True, null=True)
     
+    document = models.FileField(upload_to='documents', blank=True, null=True)
+    beds = models.IntegerField(max_length=9)
+    home_type = models.IntegerField(max_length=1, choices=HOME_TYPES, default=1, verbose_name='You are looking for a(n):')
+    room_type = models.IntegerField(max_length=1, choices=ROOM_TYPES, default=1, verbose_name='You are looking for a(n):')
+
+
+
     class Meta:
         db_table = 'user_profile'
     

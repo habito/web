@@ -10,7 +10,13 @@
 	<div id="profile" class='auth-div text-center'>
 		<h2 class=' text-center'>{{ user.first_name }} {{ user.last_name }}</h2>
 		<img src="{% profile_image user 100 %}" />
-		<h3 class='lead text-center'>{{ user.email }}</h3>
+		<!-- <h3 class='lead text-center'>{# { user.email } #}</h3> -->
+		<p>Email: 
+			<a href="#" id="email" data-type="text" data-pk="1" data-url="/me/" data-title="Enter email" style="color:black;">{{ user.email }}</a>
+		</p>
+		
+		{% if up.document %}
+			<p>Documents: <a href="/media/{{ up.document }}" style="color: blue;">link</a></p>
 	</div>
 
 {% endblock %}
