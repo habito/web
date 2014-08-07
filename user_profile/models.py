@@ -12,6 +12,7 @@ class UserProfile(models.Model):
     start_date = models.DateField(blank=True, null=True)
     end_date = models.DateField(blank=True, null=True)
     annual_pay = models.IntegerField(blank=True, null=True)
+    documents = models.FileField(upload_to='resumes', blank=True, null=True)
     
     class Meta:
         db_table = 'user_profile'
