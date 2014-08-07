@@ -32,3 +32,11 @@ class UserProfileForm(forms.ModelForm):
 class ProfilePicChangeForm(forms.Form):
     picture = forms.ImageField(label='your new profile pic')
 
+class DocumentUploadForm(forms.Form):
+    document = forms.FileField(label='Upload a document')
+
+
+
+
+
+

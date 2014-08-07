@@ -67,27 +67,34 @@ def me(request):
 	user = request.user
 	up = UserProfile.objects.get(user=user)
 	profile_pic_form = ProfilePicChangeForm()
+	document_form = DocumentUploadForm()
 
-	if request.POST.get('name', False) == 'email':
-		user.email = request.POST['value']
-		user.save()
-	elif request.POST.get('name', False) == 'phone_number':
-		up.phone_number = request.POST['value']
-		up.save()
-	elif request.POST.get('name', False) == 'start_date':
-		up.start_date = request.POST['value']
-		up.save()
-	elif request.POST.get('name', False) == 'end_date':
-		up.end_date = request.POST['value']
-		up.save
-	elif request.POST.get('name', False) == 'annual_pay':
-		up.annual_pay = request.POST['value']
-		up.save()
-	elif 'picture' in request.FILES:
-		profile_pic_form = ProfilePicChangeForm(request.POST, request.FILES)
-		if profile_pic_form.is_valid():
-			up.picture = request.FILES['picture']
+	if request.method == 'POST':
+		if 'document' in request.FILES:
+			document_form = DocumentUploadForm(request.POST, request.FILES)
+			if document_form.is_valid():
+				up.document = request.FILES['document']
+				up.save()
+		elif request.POST.get('name', False) == 'email':
+			user.email = request.POST['value']
+			user.save()
+		elif request.POST.get('name', False) == 'phone_number':
+			up.phone_number = request.POST['value']
 			up.save()
+		elif request.POST.get('name', False) == 'start_date':
+			up.start_date = request.POST['value']
+			up.save()
+		elif request.POST.get('name', False) == 'end_date':
+			up.end_date = request.POST['value']
+			up.save
+		elif request.POST.get('name', False) == 'annual_pay':
+			up.annual_pay = request.POST['value']
+			up.save()
+		elif 'picture' in request.FILES:
+			profile_pic_form = ProfilePicChangeForm(request.POST, request.FILES)
+			if profile_pic_form.is_valid():
+				up.picture = request.FILES['picture']
+				up.save()
 
 	return render_to_response('website/me.html', context_instance=RequestContext(request, {'up':up, 'profile_pic': profile_pic_form}))
 
