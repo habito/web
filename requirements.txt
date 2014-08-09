@@ -9,3 +9,5 @@ psycopg2==2.5.3
 pystache==0.5.4
 django-allauth==0.17.0
 static==1.0.2
+south==1.0
+
