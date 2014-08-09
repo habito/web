@@ -93,6 +93,7 @@ HABITO_APPS = (
     'general_models',
 )
 
+
 INSTALLED_APPS += HABITO_APPS
 INSTALLED_APPS += ALLAUTH_APPS
 
