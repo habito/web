@@ -28,7 +28,7 @@ class UserProfile(models.Model):
     annual_pay = models.IntegerField(blank=True, null=True)
     
     document = models.FileField(upload_to='documents', blank=True, null=True)
-    beds = models.IntegerField(max_length=9)
+    beds = models.IntegerField(blank=True, null=True)
     home_type = models.IntegerField(max_length=1, choices=HOME_TYPES, default=1, verbose_name='You are looking for a(n):')
     room_type = models.IntegerField(max_length=1, choices=ROOM_TYPES, default=1, verbose_name='You are looking for a(n):')
 
